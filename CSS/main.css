@@ -57,6 +57,10 @@ body {
     overflow-x: hidden;
 }
 
+p {
+    padding: 20px;
+}
+
 .burger-button {
     border-radius: 50%;
     display: flex;
