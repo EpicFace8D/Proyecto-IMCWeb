@@ -72,9 +72,9 @@ p {
     align-items: center;
     position: fixed;
     color: white;
-    align-self: center;
-    right: 5px;
-    top: 5px;
+    top: 10px;
+    right: 10px;
+    display: none;
     z-index: 2;
 }
 
