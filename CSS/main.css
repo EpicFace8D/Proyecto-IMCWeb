@@ -53,24 +53,20 @@
     box-sizing: border-box;
 }
 
-body {
-    overflow-x: hidden;
-}
-
 .burger-button {
     border-radius: 50%;
     display: flex;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     background-color: rgba(79, 120, 214, 0.85);
-    font-size: 20px;
+    font-size: 25px;
     justify-content: center;
     align-items: center;
     position: fixed;
-    right: 10px;
     color: white;
     align-self: center;
-    display: none;
+    right: 5px;
+    top: 5px;
     z-index: 2;
 }
 
@@ -83,6 +79,10 @@ body {
     flex-wrap: wrap;
     font-size: 17px;
     width: 100vw;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
     -webkit-box-shadow: 2px 0px 23px -8px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 2px 0px 23px -8px rgba(0, 0, 0, 0.75);
     box-shadow: 2px 0px 23px -8px rgba(0, 0, 0, 0.75);
@@ -92,45 +92,45 @@ body {
     padding: 1.2em;
 }
 
-.video-container {
+.hero {
     width: 100%;
-    height: 400px;
+    height: 100vh;
+    display: flex;
+    font-size: 90px;
 }
 
-
-
-.hero {
+.video-container {
     display: flex;
     position: relative;
     height: auto;
+    width: inherit;
+    height: inherit;
     object-fit: cover;
 }
 
-.hero div {
+.hero .video-container {
     width: 100%;
+    height: inherit;
     filter: brightness(.5);
 }
 
-.elputorey {
-    background-color:white;
-    position: absolute;
-    margin-top: -44px;
-    z-index: 10;
+.hero .video-container video {
     width: 100%;
-    height: 46px;
+    height: inherit;
+    object-fit: cover;
 }
 
 .hero-title {
     position: absolute;
     z-index: 1;
     color: white;
-    font-size: 11.5vw;
     padding: 10px;
     padding-right: 50%;
-    width: 100%;
-    height: 100%;
+    width: inherit;
+    height: inherit;
 }
-.hero-title span{
+
+.hero-title span {
     color: #4F78D6;
 }
 
@@ -174,7 +174,11 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     /* font-style: italic; */
 }
-
+@media screen and (max-width:1024px) {
+    .hero-title {
+        font-size: 1em;
+    }
+}
 @media screen and (max-width:777px) {
     .menu {
         display: none;
@@ -188,7 +192,22 @@ h1, h2, h3, h4, h5, h6 {
     .burger-button {
         display: flex;
     }
-    .video-container {
-        display: none;
+    .hero-title{
+        font-size: .9em;
+    }
+}
+@media screen and (max-width:482px) {
+    .hero-title {
+        font-size: .8em;
+    }
+}
+@media screen and (max-width:375px) {
+    .hero-title {
+        
+    }
+}
+@media screen and (max-width:320px) {
+    .hero-title {
+        font-size: 18vw;
     }
 }
