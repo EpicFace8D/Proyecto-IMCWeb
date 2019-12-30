@@ -53,6 +53,10 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .burger-button {
     border-radius: 50%;
     display: flex;
