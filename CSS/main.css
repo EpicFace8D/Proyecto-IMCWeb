@@ -109,11 +109,12 @@ p {
 
 .video-container {
     display: flex;
-    position: relative;
     height: auto;
     width: inherit;
     height: inherit;
     object-fit: cover;
+    position: fixed;
+    z-index: -1;
 }
 
 .hero .video-container {
@@ -210,8 +211,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 @media screen and (max-width:375px) {
-    .hero-title {
-        
+    .hero-title { 
+        font-size: .7em;
     }
 }
 @media screen and (max-width:320px) {
