@@ -115,21 +115,16 @@ body {
 .header {
     display: flex;
     height: 100px;
-    align-items: flex-end;
-    justify-content: space-around;
-    flex-wrap: wrap;
     font-size: 17px;
     width: 100vw;
     position: sticky;
     top: 0;
     background-color: white;
+    padding: 10px;
     z-index: 1;
     -webkit-box-shadow: 2px 0px 23px -8px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 2px 0px 23px -8px rgba(0, 0, 0, 0.75);
     box-shadow: 2px 0px 23px -8px rgba(0, 0, 0, 0.75);
-}
-.header li {
-    padding: 1.2em;
 }
 
 .hero {
@@ -185,26 +180,28 @@ body {
 
 .logo {
     align-self: center;
-}
-
-.logo img {
     height: 80px;
-}
-
-.html-video {
-    object-fit: cover;
 }
 
 .menu {
     display: flex;
-    right: 0;
+    width: 100%;
 }
 
 .menu ul {
     display: flex;
-    display: inherit;
     list-style: none;
     flex-wrap: wrap;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.menu li {
+    display: flex;
+    padding: 10px;
 }
 
 .menu a {
@@ -222,11 +219,8 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1em;
     }
 }
-@media screen and (max-width:777px) {
-    .menu {
-        display: none;
-    }
-    .logo img {
+@media screen and (max-width:768px) {
+    .logo {
         height: 55px;
     }
     .header {
@@ -237,6 +231,9 @@ h1, h2, h3, h4, h5, h6 {
     }
     .hero-title{
         font-size: .9em;
+    }
+    .menu li {
+        display: none;
     }
 }
 @media screen and (max-width:482px) {
