@@ -112,6 +112,10 @@ body {
     padding: 5px 0;
 }
 
+.show {
+    display: flex;
+}
+
 .header {
     display: flex;
     height: 100px;
@@ -122,9 +126,11 @@ body {
     background-color: white;
     padding: 10px;
     z-index: 1;
+    justify-content: center;
     -webkit-box-shadow: 2px 0px 23px -8px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 2px 0px 23px -8px rgba(0, 0, 0, 0.75);
     box-shadow: 2px 0px 23px -8px rgba(0, 0, 0, 0.75);
+    transition: 0.5s ease-in-out;
 }
 
 .hero {
@@ -132,6 +138,7 @@ body {
     height: 100vh;
     display: flex;
     font-size: 90px;
+    transition: 0.2s ease-in-out;
 }
 
 .video-container {
@@ -178,7 +185,7 @@ body {
     display: flex;
 }
 
-.logo {
+.logo, .logoMobile {
     align-self: center;
     height: 80px;
 }
@@ -186,6 +193,7 @@ body {
 .menu {
     display: flex;
     width: 100%;
+    transition: 0.5s ease-in-out;
 }
 
 .menu ul {
@@ -214,13 +222,16 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     /* font-style: italic; */
 }
+.show {
+    left: 0vw !important;
+}
 @media screen and (max-width:1024px) {
     .hero-title {
         font-size: 1em;
     }
 }
 @media screen and (max-width:768px) {
-    .logo {
+    .logoMobile {
         height: 55px;
     }
     .header {
@@ -232,8 +243,34 @@ h1, h2, h3, h4, h5, h6 {
     .hero-title{
         font-size: .9em;
     }
-    .menu li {
+    .logoMobile {
+        display: inline-block;
+    }
+    .logo {
         display: none;
+    }
+    .menu li {
+        width: 50px;
+        display: flex;
+        text-align: center;
+        align-content: center;
+        justify-content: center;
+    }
+    .menu ul a {
+        color: white;
+    }
+    .menu {
+        position: fixed;
+        background-color: #4F78D6;
+        top: 0;
+        bottom: 0;
+        left: -100vw;
+        right: 0;
+    }
+    .menu ul {
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
     }
 }
 @media screen and (max-width:482px) {

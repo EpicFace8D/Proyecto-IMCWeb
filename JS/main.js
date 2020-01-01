@@ -1,40 +1,14 @@
-// 2. This code loads the IFrame Player API code asynchronously.
-var tag = document.createElement('script');
+var menu = document.querySelector('.menu');
+var burger = document.querySelector('.burger-button');
 
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-// 3. This function creates an <iframe> (and YouTube player)
-//    after the API code downloads.
-var player;
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-        height:'60%',
-        playerVars: { 'autoplay': 1, 'controls': 0,'loop':1 },
-        videoId: 'hhBWP0qMYfk',
-        events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-        }
-    });
-}
+burger.addEventListener('click', showHideMenu);
 
 
-// 4. The API will call this function when the video player is ready.
-function onPlayerReady(event) {
-    player.setLoop(true);
-    event.target.setVolume(0);
-    event.target.playVideo();
-}
 
-// 5. The API calls this function when the player's state changes.
-//    The function indicates that when playing a video (state=1),
-//    the player should play for six seconds and then stop.
-var done = false;
-function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING && !done) {
-        setTimeout(stopVideo, 6000);
-        done = true;
+function showHideMenu() {
+    if(menu.classList.contains('show')) {
+        menu.classList.remove('show');
+    } else {
+        menu.classList.add('show');
     }
 }
