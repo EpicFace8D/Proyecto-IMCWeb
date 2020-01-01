@@ -256,11 +256,12 @@ h1, h2, h3, h4, h5, h6 {
         justify-content: center;
     }
     .menu ul a {
-        color: white;
+        color: black;
+        font-size: 24px;
     }
     .menu {
         position: fixed;
-        background-color: #4F78D6;
+        background-color: white;
         top: 0;
         bottom: 0;
         left: -100vw;
