@@ -1,9 +1,17 @@
 var menu = document.querySelector('.menu');
 var burger = document.querySelector('.burger-button');
+var query = window.matchMedia('screen and (max-width:768px)');
+query.addListener(validation);
 
-burger.addEventListener('click', showHideMenu);
 
 
+function validation(event) {
+    if(event.matches) {
+        burger.addEventListener('click', showHideMenu);
+    } else {
+        burger.removeEventListener('click',showHideMenu);
+    }
+}
 
 function showHideMenu() {
     if(menu.classList.contains('show')) {
@@ -12,3 +20,5 @@ function showHideMenu() {
         menu.classList.add('show');
     }
 }
+
+validation(query);
